@@ -2,6 +2,7 @@ import re
 
 import pytest
 import tensorflow as tf
+
 from tensorflow_similarity.architectures import resnet50
 
 
@@ -99,7 +100,9 @@ def test_l2_norm_false():
 
 
 @pytest.mark.parametrize(
-    "pooling, name", zip(["gem", "avg", "max"], ["gem_pool", "avg_pool", "max_pool"]), ids=["gem", "avg", "max"]
+    "pooling, name",
+    zip(["gem", "avg", "max"], ["gem_pool", "avg_pool", "max_pool"]),
+    ids=["gem", "avg", "max"],
 )
 def test_include_top_false(pooling, name):
     input_shape = (224, 224, 3)
